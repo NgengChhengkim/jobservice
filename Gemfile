@@ -18,6 +18,8 @@ gem "jbuilder", "~> 2.5"
 gem "redis", "~> 3.0"
 gem "bcrypt", "~> 3.1.7"
 gem "devise"
+gem "doorkeeper"
+
 group :development, :test do
   gem "byebug", platform: :mri
 end
