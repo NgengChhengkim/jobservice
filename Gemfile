@@ -19,9 +19,12 @@ gem "redis", "~> 3.0"
 gem "bcrypt", "~> 3.1.7"
 gem "devise"
 gem "doorkeeper"
+gem "active_model_serializers"
+gem "apipie-rails"
 
 group :development, :test do
   gem "byebug", platform: :mri
+  gem "pry-rails"
 end
 
 group :development do
