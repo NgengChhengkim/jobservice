@@ -19,6 +19,15 @@ class Api::V1::SessionsController < Doorkeeper::TokensController
     }
   end
 
+  def revoke
+    params_validator User::DOORKEEPER_REVOKE_PARAMS
+    raise APIError::SignOut::InvalidToken.new unless can_revoke?
+
+    token.revoke
+
+    render json: {success: true, data: {}}
+  end
+
   private
   def user
     @user ||= case params[:grant_type]
@@ -54,5 +63,9 @@ class Api::V1::SessionsController < Doorkeeper::TokensController
 
   def params_validator require_params
     require_params.each {|param| raise ArgumentError unless params.has_key?(param)}
+  end
+
+  def can_revoke?
+    authorized? && token.accessible?
   end
 end

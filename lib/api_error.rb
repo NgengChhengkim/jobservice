@@ -25,4 +25,9 @@ module APIError
     class InvalidToken < APIError::Base
     end
   end
+
+  module SignOut
+    class InvalidToken < APIError::Base
+    end
+  end
 end

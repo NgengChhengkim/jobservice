@@ -11,6 +11,10 @@ en:
       invalid_token:
         code: 2002
         message: Invalid token
+    sign_out:
+      invalid_token:
+        code: 2003
+        message: Invalid token
   params_exception:
     active_record:
       record_not_found:
